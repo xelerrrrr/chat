@@ -12,7 +12,7 @@
 <body>
 
   <div class="container">
-    <!-- <div class="rectangle"></div> -->
+    <div class="rectangle" style="visibility: hidden;"></div>
 
     <div class="rectangle">
       <!-- <div class="inner-container">
@@ -33,14 +33,15 @@
               Helius
             
           </div> -->
+          <div class="chat-bubble yellow box-left">Hi there! 👋 Welcome in!</div>
 
         </div>
 
 
-<!--         <div class="chat-input">
-          <input type="text" id="messageInput" placeholder="Type your message..." />
-          <button onclick="sendMessage()">Send</button>
-        </div> -->
+        <div class="chat-input" >
+          <input type="text" id="messageInput"  placeholder="Type your message..." />
+          <button onclick="sendMessage()"  >Send</button>
+        </div>
 
 
 
@@ -103,7 +104,7 @@ console.log(num1)
 
     var randomclass = item + " " + direction
 
-    if (username = "xelerrrrr") {
+    if (usernametext == "xelerrrrr") {
       direction = "box-right"
       randomclass = "purple box-right"
     }
@@ -131,7 +132,7 @@ console.log(num1)
   // Optional: send message on Enter key
   document.getElementById("messageInput").addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
-      sendMessage();
+      sendMessage("","");
 
     }
   });
