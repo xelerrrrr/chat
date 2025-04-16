@@ -1,0 +1,38 @@
+
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+  </head>
+  <body>
+    <div class="contain-er">
+      <div class="row">
+        <header>
+          <div id="navbar">
+
+          </div>                        
+        </header>
+        <main>
+        
+        </main>
+        <footer>
+        
+        </footer>
+        
+      </body>
+    </div>
+  </div>
+</html>
+
+<script>
+
+
+//     $("#navbar").load("navbar.php", function() {
+//   const myChange = document.getElementById("change");
+//   myChange.innerHTML = "<a href='bluebox.html'>Something else</a>";
+// });
+
+$("#navbar").load("https://xelerrrrr.github.io/chat/chatbox")
+  </script>
