@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+
+  </style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <!--div class="rectangle" style="visibility: hidden;"></div-->
+
+    <div class="rectangle">
+      <!-- <div class="inner-container">
+        <div class="rectangle">
+ -->
+
+      <div class="chat-wrapper">
+
+        <div id="chatBox" class="chat-box" style="vertical-align: bottom;">
+          <!-- <div id="chatBox" class="chat-box" style="position:relative;"> -->
+
+          <!-- <div class="chat-bubble2">
+            <div class="chat-text">
+              I'm good, thanks! Hoasdasdsddasasdasddasdw about you?
+            </div>
+          </div> -->
+          <!-- <div class="username-text">
+              Helius
+            
+          </div> -->
+          <div class="chat-bubble yellow box-left">Hi there! 👋 Welcome in!</div>
+
+        </div>
+
+
+        <div class="chat-input" >
+          <input type="text" id="messageInput"  placeholder="Type your message..." />
+          <button onclick="sendMessage()"  >Send</button>
+        </div>
+
+
+
+        <!-- </div>
+      </div> -->
+
+      </div>
+
+
+</body>
+<script src="https://github.com/tmijs/tmi.js/releases/download/v1.8.4/tmi.min.js"></script>
+<script src="script.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+
+  function random4() {
+
+    var num = Math.random();
+    if (num < 0.325) return 0;  //probability 0.3
+    else if (num < 0.65) return 1; // probability 0.3
+    else if (num < 0.975) return 2; //probability 0.3
+    else return 3;  //probability 0.1
+  }
+
+  function random2() {
+
+
+    var num = Math.random();
+    if (num < 0.9) return 0;  //probability 0.3
+    else return 1; // probability 0.3
+  }
+  function sendMessage(message, usernametext) {
+    const input = document.getElementById("messageInput");
+    const chatBox = document.getElementById("chatBox");
+    if (input.value.trim() != "") {
+      message = input.value.trim();
+      usernametext = "boo"
+    }
+
+
+    var usernamecalss = "username-text"
+    var items = Array("yellow", "pink", "blue", "purple");
+
+
+    var num = random4();
+    // var item = items[Math.floor(Math.random() * items.length)];
+    var item = items[num];
+    // var item = "blue";
+
+
+    var num1 = random2();
+
+    var directions = Array("box-left", "box-right");
+console.log(num1)
+    // var direction = directions[Math.floor(Math.random() * directions.length)];
+    var direction = directions[num1];
+    console.log(direction)
+
+
+    var randomclass = item + " " + direction
+
+    if (usernametext == "xelerrrrr") {
+      direction = "box-right"
+      randomclass = "purple box-right"
+    }
+    // Create a new message bubble
+    const username = document.createElement("div");
+    username.className = "username-text " + direction;
+    username.textContent = usernametext;
+    chatBox.appendChild(username);
+
+    const bubble = document.createElement("div");
+    // bubble.className = "chat-bubble yellow box-left";
+    bubble.className = "chat-bubble " + randomclass;
+
+    bubble.textContent = message;
+    chatBox.appendChild(bubble);
+
+    // Optional: Scroll to the bottom
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    // Clear the input
+    input.value = "";
+    // }
+  }
+
+  // Optional: send message on Enter key
+  document.getElementById("messageInput").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      sendMessage("","");
+
+    }
+  });
+  $(document).ready(function () {
+
+  });
+</script>
+
+</html>
