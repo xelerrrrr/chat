@@ -20,6 +20,10 @@ const client = new tmi.Client({
 client.connect();
 
 client.on('message', (channel, tags, message, self) => {
+	console.log(tags);
+	console.log(channel);
+	console.log(message);
+	console.log(self);
 	console.log(`${tags['display-name']}: ${message}`);
     // if ((tags['display-name']) != "xelerrrrr") {
         sendMessage(message, tags['display-name']);
